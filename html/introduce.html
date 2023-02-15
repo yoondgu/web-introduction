@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>자기소개 페이지</title>
+</head>
+<body>
+<div id="header">
+    <h1>Hello wooteco!</h1>
+</div>
+
+<div id="introduction">
+    <h2>자기소개</h2>
+    <p>안녕하세요, 이유를 생각하는 개발자가 되고 싶은 '도이'입니다. 듣기 좋은 것, 먹기 좋은 것, 보기 좋은 것 다 좋아합니다. </p>
+</div>
+
+<!-- 순위, 줄거리, 링크 -->
+<div id="best-movies">
+    <h2>인생 영화 BEST 5</h2>
+    <table>
+        <tr>
+            <td><img alt="영화1" src="../images/movie1.jpg"></td>
+            <td><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=0001" target="_blank">영화1</a></td>
+        </tr>
+        <tr>
+            <td><img alt="영화2" src="../images/movie2.jpg"></td>
+            <td><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=0002" target="_blank">영화2</a></td>
+        </tr>
+        <tr>
+            <td><img alt="영화3" src="../images/movie3.jpg"></td>
+            <td><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=0003" target="_blank">영화3</a></td>
+        </tr>
+        <tr>
+            <td><img alt="영화4" src="../images/movie4.jpg"></td>
+            <td><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=0004" target="_blank">영화4</a></td>
+        </tr>
+        <tr>
+            <td><img alt="영화5" src="../images/movie5.jpg"></td>
+            <td><a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=0005" target="_blank">영화5</a></td>
+        </tr>
+    </table>
+</div>
+
+<div id="guestbook">
+    <h2>방명록</h2>
+    <form>
+        <label for="name">이름:</label>
+        <input id="name" name="name" type="text"><br><br>
+        <label>취향의 영화:</label>
+        <input id="movie1" name="movie1" type="checkbox" value="영화1">
+        <label for="movie1">영화1</label>
+        <input id="movie2" name="movie2" type="checkbox" value="영화2">
+        <label for="movie2">영화2</label>
+        <input id="movie3" name="movie3" type="checkbox" value="영화3">
+        <label for="movie3">영화3</label>
+        <input id="movie4" name="movie4" type="checkbox" value="영화4">
+        <label for="movie4">영화4</label>
+        <input id="movie5" name="movie5" type="checkbox" value="영화5">
+        <label for="movie5">영화5</label>
+        <button type="button">등록</button>
+        <button type="reset">취소</button>
+    </form>
+</div>
+
+</body>
+</html>
