@@ -1,14 +1,37 @@
 function submitGuestBook() {
-    // TODO 이름이 비어있는 경우 alert
-    let $name = document.getElementById("name");
+    let name = document.getElementById("name").value;
+    if (name == "") {
+        alert("이름을 입력해주세요.");
+        return;
+    }
+
     let $checkboxs = document.getElementsByName("movie");
-    let checkboxsLength = $checkboxs.length;
     let checkedCount = 0;
-    for (i = 0; i < checkboxsLength; i++) {
+    let checkedMovieNames = [];
+    for (i = 0; i < $checkboxs.length; i++) {
         let checkbox = $checkboxs[i];
         if (checkbox.checked) {
+            checkedMovieNames.push("<" + checkbox.value + ">");
             checkedCount++;
         }
     }
-    alert($name.value + "님, 저와 " + checkedCount + "개의 취향이 같으시네요!");
+    alert(name + "님, 저와 " + checkedCount + "개의 취향이 같으시네요!");
+    addGuestBookHistory(name, checkedMovieNames);
+ }
+
+function addGuestBookHistory(name, checkedMovieNames) {
+   let guestBookHistoryTable = document.getElementById("guestbook-history-table");
+    guestBookHistoryTable.innerHTML = guestBookHistoryTable.innerHTML + generateGuestBookMessage(name, checkedMovieNames);
+}
+
+function generateGuestBookMessage(name, checkedMovieNames) {
+    let likedMoviesSentence = checkedMovieNames.join(",") +"를 좋아해요.";
+    if (checkedMovieNames.length == 0) {
+        likedMoviesSentence = "취향이 같은 영화가 없어요.";
+    }
+    let newGuestElement = "<tr>"
+        + "<td>"+ name + "</td>"
+        + "<td>"+ likedMoviesSentence + "</td>"
+        + "</tr>";
+    return newGuestElement;
 }
